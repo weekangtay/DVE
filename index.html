@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>&lt;model-viewer&gt; template</title>
+    <meta charset="utf-8">
+    <meta name="description" content="&lt;model-viewer&gt; template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+:not(:defined) > * {
+  display: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+model-viewer {
+  width: 100%;
+  height: 90%;
+  background-color: #ffffff;
+}
+
+.Hotspot {
+  background: #fff;
+  border-radius: 32px;
+  border: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  cursor: pointer;
+  height: 24px;
+  padding: 8px;
+  position: relative;
+  transition: opacity 0.3s;
+  width: 24px;
+}
+
+.Hotspot:not([data-visible]) {
+  background: transparent;
+  border: 4px solid #fff;
+  box-shadow: none;
+  height: 32px;
+  pointer-events: none;
+  width: 32px;
+}
+
+.Hotspot:focus {
+  border: 4px solid rgb(0, 128, 200);
+  height: 32px;
+  outline: none;
+  width: 32px;
+}
+
+.Hotspot > * {
+  opacity: 1;
+  transform: translateY(-50%);
+}
+
+.HotspotAnnotation{
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.8);
+  display: block;
+  font-family: Futura, Helvetica Neue, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  left: calc(100% + 1em);
+  max-width: 128px;
+  overflow-wrap: break-word;
+  padding: 0.5em 1em;
+  position: absolute;
+  top: 50%;
+  width: max-content;
+}
+
+.Hotspot:not([data-visible]) > * {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(calc(-50% + 4px));
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+</style>
+ 
+    <script src="focus-visible.js" defer></script>
+  </head>
+  <body>
+    <!-- insert your "model-viewer" snippet code in the next line //-->
+<model-viewer src="iphone.glb" ios-src="iphone.usdz" ar ar-modes="webxr'' scene-viewer quick-look" camera-controls tone-mapping="commerce" poster="poster.png" shadow-intensity="1" width="400px" height="300px">
+    <button class="Hotspot" slot="hotspot-2" data-position="-0.0006420006309058976m 0.001803760051727281m 0.06211766597165401m" data-normal="0m 1m 2.220446049250313e-16m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Charging Port</div>
+    </button><button class="Hotspot" slot="hotspot-4" data-position="-0.02970781352307955m 0.0039066485751154m -0.04189403121327008m" data-normal="-0.9808896797008884m 0.19456473538719413m 4.320204980139278e-17m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Mute Switch</div>
+    </button><button class="Hotspot" slot="hotspot-5" data-position="-0.030009792327880865m 0.0041727873752299225m -0.02974559358763959m" data-normal="-1m 0m 0m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Volume Up Button</div>
+    </button><button class="Hotspot" slot="hotspot-6" data-position="-0.030009792327880865m 0.002620827207885047m -0.02038687582416067m" data-normal="-1m 0m 0m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Volume Down Button</div>
+    </button><button class="Hotspot" slot="hotspot-7" data-position="0.001318151424893479m 0.005573525309562672m 0.051742253294212545m" data-normal="0m 1m 2.220446049250313e-16m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Home Button</div>
+    </button><button class="Hotspot" slot="hotspot-8" data-position="0.01501395163610706m 0.0038954496166223m -0.06127489089965822m" data-normal="0m 2.220446049250313e-16m -1m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Power Button</div>
+    </button>
+    <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+    </div>
+    
+         <button slot="ar-button" style="background-color: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; ">
+      👋 Activate AR
+  </button>
+
+    <!--div id="ar-prompt">
+        <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+    </div -->
+</model-viewer>
+
+
+
+
+
+
+
+    <!-- your "model-viewer" snippet code should appear above this line //-->
+    <script type="module" src="model-viewer.min.js"></script>
+  </body>
+</html>
+
+
+
+
